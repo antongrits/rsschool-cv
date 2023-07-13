@@ -1,7 +1,9 @@
 # Anton Hryts
 #### Junior Front-End Developer
 
-#### Contacts
+---
+
+#### Contacts:
 * **Location:** Minsk, Belarus
 * **Phone:** +375 (29) 381-98-66 
 * **Email:** <antongric558@gmail.com>
