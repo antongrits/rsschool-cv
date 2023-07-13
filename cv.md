@@ -79,3 +79,10 @@ class RailwayCar {
     }
 }
 ```
+
+---
+
+#### Educational projects:
+* [Theater website landing page](https://github.com/antongrits/theater) (HTML, CSS)
+* [class Railway](https://github.com/antongrits/railway_class) (HTML, JS)
+* [lists](https://github.com/antongrits/lists) (C++)
