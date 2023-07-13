@@ -95,3 +95,8 @@ class RailwayCar {
 * **Belarusian State University**, Faculty of Mechanics and Mathematics (mathematical and software for mobile devices)
 * [Stepik](https://welcome.stepik.org/ru)
 * [Codecademy](https://www.codecademy.com/learn)
+
+---
+
+#### English
+**A2** - Pre-Intermediate
