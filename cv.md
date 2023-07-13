@@ -25,3 +25,57 @@ I never stop there, I develop myself, take courses, read programming literature.
 * Git, GitHub
 * VS Code, Visual Studio, Adobe Dreamweaver
 * Figma
+
+---
+
+#### Code example:
+```
+class RailwayCar {
+    #weight;
+    #cargoUnits;
+    constructor(weight, cargoUnits) {
+        if (weight < 0) {
+            this.displayError("Wrong weight");
+            cargoUnits = 0;
+            this.#weight = "No cargo";
+        }
+        else if (weight === 0 && cargoUnits !== 0) {
+            this.displayError("The weight is 0 and the number of items is a positive number");
+            cargoUnits = 0;
+            this.#weight = weight;
+        }
+        else this.#weight = weight;
+        if (cargoUnits < 0) {
+            this.displayError("Invalid number of items");
+            this.zeroWeight();
+            this.#cargoUnits = "No cargo";
+        }
+        else if (cargoUnits === 0 && weight !== 0) {
+            this.displayError("The number of product units is 0 and the weight is a positive number");
+            this.zeroWeight();
+            this.#cargoUnits = cargoUnits;
+        }
+        else this.#cargoUnits = cargoUnits;
+    }
+    get weight() {
+        return this.#weight;
+    }
+    get cargoUnits() {
+        return this.#cargoUnits;
+    }
+    displayError(errorMessage) {
+        document.write("Error: " + errorMessage);
+        document.write("<br><br>");
+    }
+    toString() {
+        document.write("<br>Weight: " + this.weight);
+        document.write("<br>Quantity of product units: " + this.cargoUnits);
+    }
+    zeroWeight(){
+        this.#weight = 0;
+    }
+    zeroUnits() {
+        this.#cargoUnits = 0;
+    }
+}
+```
