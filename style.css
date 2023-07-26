@@ -41,16 +41,21 @@ body {
 }
 
 .section-profile {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .section-profile-logo {
   margin-left: 16px;
+}
+
+.section-logo {
   border-radius: 70px;
 }
 
 .section-profile-title {
+  width: 60%;
   margin-left: 32px;
   margin-top: 70px;
 }
