@@ -5,5 +5,8 @@
     "stylelint": "^15.10.2",
     "stylelint-config-htmlacademy": "^2.0.2",
     "stylelint-config-recommended": "^13.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }
