@@ -202,7 +202,14 @@ class RailwayCar {
     </div>
   </main>
   <footer class="footer">
-    <div class="container"></div>
+    <div class="container footer-container">
+      <div class="footer-block-text">© 2023, <b>CV</b></div>
+      <div class="footer-block-img">
+        <div class="footer-block-img-github"><a class="footer-link" href="https://github.com/antongrits" target="_blank" rel="noreferrer noopener"><img class="footer-link-github" src="assets/img/github-footer.svg" alt="github" width="40" height="40"></a></div>
+        <div class="footer-block-img-rsschool"><a class="footer-link" href="https://rs.school/js/" target="_blank" rel="noreferrer noopener"><img class="footer-link-rsschool" src="assets/img/rs_school_js.svg" alt="rsschool" width="121" height="45"></a></div>
+        <div class="footer-block-img-youtube"><a class="footer-link" href="" target="_blank" rel="noreferrer noopener"><img class="footer-link-youtube" src="assets/img/youtube.svg" alt="youtube" width="42" height="42"></a></div>
+      </div>
+    </div>
   </footer>
   <script>
     const contactsLinkLocation = document.querySelector('.contacts-link-location');
@@ -215,7 +222,9 @@ class RailwayCar {
     const telegramElement = document.querySelector('.img-link-telegram');
     const contactsLinkGithub = document.querySelector('.contacts-link-github');
     const githubElement = document.querySelector('.img-link-github');
-
+    const githubFooterElement = document.querySelector('.footer-link-github');
+    const rsschoolFooterElement = document.querySelector('.footer-link-rsschool');
+    const youtubeFooterElement = document.querySelector('.footer-link-youtube');
 
     function startAnimationLocation() {
       locationElement.classList.add('location');
@@ -263,6 +272,36 @@ class RailwayCar {
       githubElement.classList.remove('animate__heartBeat');
     }
 
+    function startAnimationGithubFooter() {
+      githubFooterElement.classList.add('animate__animated');
+      githubFooterElement.classList.add('animate__heartBeat');
+    }
+
+    function stopAnimationGithubFooter() {
+      githubFooterElement.classList.remove('animate__animated');
+      githubFooterElement.classList.remove('animate__heartBeat');
+    }
+
+    function startAnimationRsschool() {
+      rsschoolFooterElement.classList.add('animate__animated');
+      rsschoolFooterElement.classList.add('animate__rubberBand');
+    }
+
+    function stopAnimationRsschool() {
+      rsschoolFooterElement.classList.remove('animate__animated');
+      rsschoolFooterElement.classList.remove('animate__rubberBand');
+    }
+
+    function startAnimationYoutube() {
+      youtubeFooterElement.classList.add('animate__animated');
+      youtubeFooterElement.classList.add('animate__rotateIn');
+    }
+
+    function stopAnimationYoutube() {
+      youtubeFooterElement.classList.remove('animate__animated');
+      youtubeFooterElement.classList.remove('animate__rotateIn');
+    }
+
     contactsLinkLocation.addEventListener('mouseover', startAnimationLocation);
     contactsLinkLocation.addEventListener('mouseout', stopAnimationLocation);
     locationElement.addEventListener('mouseover', startAnimationLocation);
@@ -287,6 +326,15 @@ class RailwayCar {
     contactsLinkGithub.addEventListener('mouseout', stopAnimationGithub);
     githubElement.addEventListener('mouseover', startAnimationGithub);
     githubElement.addEventListener('mouseout', stopAnimationGithub);
+
+    githubFooterElement.addEventListener('mouseover', startAnimationGithubFooter);
+    githubFooterElement.addEventListener('mouseout', stopAnimationGithubFooter);
+
+    rsschoolFooterElement.addEventListener('mouseover', startAnimationRsschool);
+    rsschoolFooterElement.addEventListener('mouseout', stopAnimationRsschool);
+
+    youtubeFooterElement.addEventListener('mouseover', startAnimationYoutube);
+    youtubeFooterElement.addEventListener('mouseout', stopAnimationYoutube);
 
 
     const ranges = document.querySelectorAll('.skills-range');
