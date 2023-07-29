@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  font-family: Cabin, sans-serif;
 }
 
 @font-face {
@@ -127,7 +126,7 @@ hr {
 
 .column {
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 202px;
   background: #292935;
 }
 
@@ -326,9 +325,79 @@ input[type=range]::-webkit-slider-thumb {
 
 .english-level {
   padding-bottom: 15px;
+  margin-bottom: 0;
   color: #FFF;
   font-family: Cabin, sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
+
+.column-main {
+  width: -webkit-fill-available;
+  padding-left: 33px;
+  padding-right: 33px;
+  background: #22222E;
+}
+
+.pre-code {
+  margin-bottom: 0;
+  color: #FFF;
+  font-size: 14px;
+}
+
+.projects-wrapper {
+  padding-left: 13px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  color: #FFF;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.projects-block {
+  margin-bottom: 15px;
+}
+
+.projects-block-name {
+  text-decoration: underline #FFC905;
+  color: #FFF;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.projects-block-name:hover {
+  color: #FFC905;
+  transition: 0.2s linear;
+}
+ .main-container {
+  display: flex;
+ }
+
+ .interests-wrapper {
+  margin-top: 30px;
+  margin-right: 60px;
+  display: flex;
+  justify-content: space-around;
+  color: #FFF;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+ }
+
+ .interests-block-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .interests-block-name {
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+ }

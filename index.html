@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anton Hryts | CV</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico">
 </head>
 <body>
   <header class="header">
@@ -115,7 +115,90 @@
           <p class="english-level"><strong>A2</strong> - Pre-Intermediate</p>
         </section>
       </div>
-      <div class="column-main"></div>
+      <div class="column-main">
+        <section class="document-section code-example">
+          <h2 class="document-title">Code example</h2>
+          <hr class="line-document" align="left">
+          <pre class="pre-code">
+            <code>
+class RailwayCar {
+    #weight;
+    #cargoUnits;
+    constructor(weight, cargoUnits) {
+        if (weight < 0) {
+            this.displayError("Wrong weight");
+            cargoUnits = 0;
+            this.#weight = "No cargo";
+        }
+        else if (weight === 0 && cargoUnits !== 0) {
+            this.displayError("The weight is 0");
+            cargoUnits = 0;
+            this.#weight = weight;
+        }
+        else this.#weight = weight;
+        if (cargoUnits < 0) {
+            this.displayError("Invalid number of items");
+            this.zeroWeight();
+            this.#cargoUnits = "No cargo";
+        }
+        else if (cargoUnits === 0 && weight !== 0) {
+            this.displayError("The number of units is 0");
+            this.zeroWeight();
+            this.#cargoUnits = cargoUnits;
+        }
+        else this.#cargoUnits = cargoUnits;
+    }
+    get weight() {
+        return this.#weight;
+    }
+    get cargoUnits() {
+        return this.#cargoUnits;
+    }
+    displayError(errorMessage) {
+        document.write("Error: " + errorMessage);
+        document.write("&lt;br&gt;&lt;br&gt;");
+    }
+    toString() {
+        document.write("&lt;br&gt;Weight: " + this.weight);
+    }
+    zeroWeight(){
+        this.#weight = 0;
+    }
+    zeroUnits() {
+        this.#cargoUnits = 0;
+    }
+}
+            </code>
+          </pre>
+        </section>
+        <section class="document-section educational-projects">
+          <h2 class="document-title">Educational projects</h2>
+          <hr class="line-document" align="left">
+          <ul class="projects-wrapper">
+            <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/theater" target="_blank" rel="noreferrer noopener">Theater website landing page</a> (HTML, CSS)</li>
+            <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/railway_class" target="_blank" rel="noreferrer noopener">Class Railway</a> (HTML, JS)</li>
+            <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/lists" target="_blank" rel="noreferrer noopener">Lists</a> (C++)</li>
+          </ul>
+        </section>
+        <section class="document-section interests">
+          <h2 class="document-title">Interests</h2>
+          <hr class="line-document" align="left">
+          <div class="interests-wrapper">
+            <div class="interests-block">
+              <div class="interests-block-img"><img src="assets/img/programming.svg" alt="programming" width="60" height="60"></div>
+              <p class="interests-block-name">Programming</p>
+            </div>
+            <div class="interests-block">
+              <div class="interests-block-img"><img src="assets/img/english.svg" alt="english" width="60" height="60"></div>
+              <p class="interests-block-name">English</p>
+            </div>
+            <div class="interests-block">
+              <div class="interests-block-img"><img src="assets/img/travel.svg" alt="travel" width="60" height="60"></div>
+              <p class="interests-block-name">Travel</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
   <footer class="footer">
