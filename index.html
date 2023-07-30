@@ -34,9 +34,9 @@
           <h1 class="section-title">Anton Hryts</h1>
           <h2 class="section-profession">Junior Front-End Developer</h2>
           <h2 class="section-name">PROFILE</h2>
-          <hr align="left">
+          <hr>
           <p class="section-information">
-            I have always been interested in the IT field. Therefore, I decided to enroll in the best university in the country&nbsp- BSU for
+            I have always been interested in the IT field. Therefore, I decided to enroll in the best university in the country&nbsp;- BSU for
             the specialty of web programming. My strengths are enthusiasm, reliability, creativity, determination and others. I am also a
             good team worker, I have interpersonal communication skills. My goal is to become a good Front-End developer. I never stop there,
             I develop myself, take courses, read programming literature. And then I want to learn a lot of new things and improve my skills.
@@ -50,7 +50,7 @@
       <div class="column">
         <section class="document-section contacts" id="contacts">
           <h2 class="document-title">Contacts</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <ul class="contacts-wrapper">
             <li class="contacts-block">
               <div class="contacts-block-img contacts-block-img-location"><a class="contacts-link-img" href="https://goo.gl/maps/tdjjMU5V6qbdRoH28" target="_blank" rel="noreferrer noopener"><img class="img-link-location" src="assets/img/location.svg" alt="location" width="20" height="20"></a></div>
@@ -76,7 +76,7 @@
         </section>
         <section class="document-section education" id="education">
           <h2 class="document-title">Education</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <div class="education-wrapper">
             <div class="education-block">
               <div class="education-block-title"><a class="education-block-title-link" href="https://bsu.by" target="_blank" rel="noreferrer noopener">Belarusian State University</a></div>
@@ -97,7 +97,7 @@
         </section>
         <section class="document-section skills" id="skills">
           <h2 class="document-title">Skills</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
             <ul class="skills-wrapper">
               <li class="skills-block">
                 <div class="skills-block-name">HTML, CSS</div>
@@ -127,21 +127,21 @@
         </section>
         <section class="document-section english" id="english">
           <h2 class="document-title">English</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <p class="english-level"><strong>A2</strong> - Pre-Intermediate</p>
         </section>
       </div>
       <div class="column-main">
         <section class="document-section code-example" id="code-example">
           <h2 class="document-title">Code example</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <pre class="pre-code">
             <code>
 class RailwayCar {
     #weight;
     #cargoUnits;
     constructor(weight, cargoUnits) {
-        if (weight < 0) {
+        if (weight &lt; 0) {
             this.displayError("Wrong weight");
             cargoUnits = 0;
             this.#weight = "No cargo";
@@ -152,7 +152,7 @@ class RailwayCar {
             this.#weight = weight;
         }
         else this.#weight = weight;
-        if (cargoUnits < 0) {
+        if (cargoUnits &lt; 0) {
             this.displayError("Invalid number of items");
             this.zeroWeight();
             this.#cargoUnits = "No cargo";
@@ -189,7 +189,7 @@ class RailwayCar {
         </section>
         <section class="document-section educational-projects" id="educational-projects">
           <h2 class="document-title">Educational projects</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <ul class="projects-wrapper">
             <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/theater" target="_blank" rel="noreferrer noopener">Theater website landing page</a> (HTML, CSS)</li>
             <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/railway_class" target="_blank" rel="noreferrer noopener">Class Railway</a> (HTML, JS)</li>
@@ -198,18 +198,18 @@ class RailwayCar {
         </section>
         <section class="document-section interests" id="interests">
           <h2 class="document-title">Interests</h2>
-          <hr class="line-document" align="left">
+          <hr class="line-document">
           <div class="interests-wrapper">
             <div class="interests-block">
-              <div class="interests-block-img"><img src="assets/img/programming.svg" alt="programming" width="60" height="60"></div>
+              <div class="interests-block-img"><img class="interests-img" src="assets/img/programming.svg" alt="programming" width="60" height="60"></div>
               <p class="interests-block-name">Programming</p>
             </div>
             <div class="interests-block">
-              <div class="interests-block-img"><img src="assets/img/english.svg" alt="english" width="60" height="60"></div>
+              <div class="interests-block-img"><img class="interests-img" src="assets/img/english.svg" alt="english" width="60" height="60"></div>
               <p class="interests-block-name">English</p>
             </div>
             <div class="interests-block">
-              <div class="interests-block-img"><img src="assets/img/travel.svg" alt="travel" width="60" height="60"></div>
+              <div class="interests-block-img"><img class="interests-img" src="assets/img/travel.svg" alt="travel" width="60" height="60"></div>
               <p class="interests-block-name">Travel</p>
             </div>
           </div>
@@ -247,6 +247,7 @@ class RailwayCar {
     const toggleThirdElement = document.querySelector('.line3');
     const navElement = document.querySelector('.nav');
     const navLinkElement = document.querySelectorAll('.list-item-link');
+    const containerHeader = document.querySelector('.header-container');
 
 
     function startAnimationLocation() {
@@ -326,6 +327,7 @@ class RailwayCar {
     }
 
     function startMenu() {
+      containerHeader.classList.add('container-active');
       toggleFirstElement.classList.add('line1-active');
       toggleSecondElement.classList.add('line2-active');
       toggleThirdElement.classList.add('line3-active');
@@ -340,6 +342,7 @@ class RailwayCar {
     toggleThirdElement.classList.remove('line3-active');
     navElement.classList.remove('animate__backInDown');
     navElement.classList.add('animate__backOutUp');
+    containerHeader.classList.remove('container-active');
 
       navElement.addEventListener('animationend', () => {
         navElement.classList.remove('animate__animated');
