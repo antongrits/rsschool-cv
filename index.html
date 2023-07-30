@@ -10,6 +10,22 @@
 <body>
   <header class="header">
     <div class="container header-container">
+      <div class="toggle">
+        <div class="toggle-line line1"></div>
+        <div class="toggle-line line2"></div>
+        <div class="toggle-line line3"></div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="list-item"><a class="list-item-link" href="#contacts">Contacts</a></li>
+          <li class="list-item"><a class="list-item-link" href="#education">Education</a></li>
+          <li class="list-item"><a class="list-item-link" href="#skills">Skills</a></li>
+          <li class="list-item"><a class="list-item-link" href="#english">English</a></li>
+          <li class="list-item"><a class="list-item-link" href="#code-example">Code example</a></li>
+          <li class="list-item"><a class="list-item-link" href="#educational-projects">Educational projects</a></li>
+          <li class="list-item"><a class="list-item-link" href="#interests">Interests</a></li>
+        </ul>
+      </nav>
       <section class="section section-profile">
         <div class="section-profile-logo">
           <img class="section-logo" src="assets/img/avatar.jpeg" alt="avatar" width="450" height="410">
@@ -32,7 +48,7 @@
   <main class="main">
     <div class="container main-container">
       <div class="column">
-        <section class="document-section contacts">
+        <section class="document-section contacts" id="contacts">
           <h2 class="document-title">Contacts</h2>
           <hr class="line-document" align="left">
           <ul class="contacts-wrapper">
@@ -58,7 +74,7 @@
             </li>
           </ul>
         </section>
-        <section class="document-section education">
+        <section class="document-section education" id="education">
           <h2 class="document-title">Education</h2>
           <hr class="line-document" align="left">
           <div class="education-wrapper">
@@ -79,7 +95,7 @@
             </div>
           </div>
         </section>
-        <section class="document-section skills">
+        <section class="document-section skills" id="skills">
           <h2 class="document-title">Skills</h2>
           <hr class="line-document" align="left">
             <ul class="skills-wrapper">
@@ -109,14 +125,14 @@
               </li>
             </ul>
         </section>
-        <section class="document-section english">
+        <section class="document-section english" id="english">
           <h2 class="document-title">English</h2>
           <hr class="line-document" align="left">
           <p class="english-level"><strong>A2</strong> - Pre-Intermediate</p>
         </section>
       </div>
       <div class="column-main">
-        <section class="document-section code-example">
+        <section class="document-section code-example" id="code-example">
           <h2 class="document-title">Code example</h2>
           <hr class="line-document" align="left">
           <pre class="pre-code">
@@ -171,7 +187,7 @@ class RailwayCar {
             </code>
           </pre>
         </section>
-        <section class="document-section educational-projects">
+        <section class="document-section educational-projects" id="educational-projects">
           <h2 class="document-title">Educational projects</h2>
           <hr class="line-document" align="left">
           <ul class="projects-wrapper">
@@ -180,7 +196,7 @@ class RailwayCar {
             <li class="projects-block"><a class="projects-block-name" href="https://github.com/antongrits/lists" target="_blank" rel="noreferrer noopener">Lists</a> (C++)</li>
           </ul>
         </section>
-        <section class="document-section interests">
+        <section class="document-section interests" id="interests">
           <h2 class="document-title">Interests</h2>
           <hr class="line-document" align="left">
           <div class="interests-wrapper">
@@ -225,6 +241,13 @@ class RailwayCar {
     const githubFooterElement = document.querySelector('.footer-link-github');
     const rsschoolFooterElement = document.querySelector('.footer-link-rsschool');
     const youtubeFooterElement = document.querySelector('.footer-link-youtube');
+    const toggleElement = document.querySelector('.toggle');
+    const toggleFirstElement = document.querySelector('.line1');
+    const toggleSecondElement = document.querySelector('.line2');
+    const toggleThirdElement = document.querySelector('.line3');
+    const navElement = document.querySelector('.nav');
+    const navLinkElement = document.querySelectorAll('.list-item-link');
+
 
     function startAnimationLocation() {
       locationElement.classList.add('location');
@@ -302,6 +325,38 @@ class RailwayCar {
       youtubeFooterElement.classList.remove('animate__rotateIn');
     }
 
+    function startMenu() {
+      toggleFirstElement.classList.add('line1-active');
+      toggleSecondElement.classList.add('line2-active');
+      toggleThirdElement.classList.add('line3-active');
+      navElement.classList.add('animate__animated');
+      navElement.classList.add('animate__backInDown');
+      navElement.classList.add('nav-active');
+    }
+
+    function stopMenu() {
+    toggleFirstElement.classList.remove('line1-active');
+    toggleSecondElement.classList.remove('line2-active');
+    toggleThirdElement.classList.remove('line3-active');
+    navElement.classList.remove('animate__backInDown');
+    navElement.classList.add('animate__backOutUp');
+
+      navElement.addEventListener('animationend', () => {
+        navElement.classList.remove('animate__animated');
+        navElement.classList.remove('animate__backOutUp');
+        navElement.classList.remove('nav-active');
+      }, { once: true });
+    }
+
+    function toggleMenu() {
+      if (navElement.classList.contains('nav-active')) {
+        stopMenu();
+      } else {
+      startMenu();
+      }
+    }
+
+
     contactsLinkLocation.addEventListener('mouseover', startAnimationLocation);
     contactsLinkLocation.addEventListener('mouseout', stopAnimationLocation);
     locationElement.addEventListener('mouseover', startAnimationLocation);
@@ -336,6 +391,8 @@ class RailwayCar {
     youtubeFooterElement.addEventListener('mouseover', startAnimationYoutube);
     youtubeFooterElement.addEventListener('mouseout', stopAnimationYoutube);
 
+    toggleElement.addEventListener('click', toggleMenu);
+    navLinkElement.forEach(el => el.addEventListener('click', stopMenu));
 
     const ranges = document.querySelectorAll('.skills-range');
 

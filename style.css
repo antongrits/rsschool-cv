@@ -434,3 +434,105 @@ input[type=range]::-webkit-slider-thumb {
 .footer-block-img-youtube {
   padding-left: 15px;
 }
+
+.header-container {
+  background-color: #292935;
+}
+
+.toggle {
+  width: 40px;
+  padding-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-line {
+  width: 40px;
+  height: 4px;
+  margin-bottom: 7px;
+  background-color: #FFC905;
+  border-radius: 25px;
+}
+
+.line3 {
+  margin: 0;
+}
+
+.line1,
+.line2,
+.line3 {
+  transition: 0.3s linear;
+}
+
+.line1-active,
+.line2-active,
+.line3-active {
+  transition: 0.3s linear;
+}
+
+.line1-active {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.line2-active {
+  opacity: 0;
+}
+
+.line3-active {
+  transform: rotate(45deg) translate(-9px, -9px);
+}
+
+.nav {
+  display: none;
+}
+
+.nav-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 65px;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: #292935;
+}
+
+.nav-list {
+  padding-top: 15px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.list-item {
+  margin-bottom: 35px;
+  color: #FFF;
+  font-family: Cabin, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.list-item-link {
+  text-decoration: none;
+  color: #FFF;
+  transition: 0.2s linear;
+}
+
+.list-item-link:hover {
+  color: #FFC905;
+}
+
+html {
+  scroll-behavior: smooth;
+}
